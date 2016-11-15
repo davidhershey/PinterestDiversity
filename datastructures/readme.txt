@@ -1,0 +1,1 @@
+This folder should contain intermediate data structures ie. pickled dictionaries, lists, snap.py hashes that have been computed and taken relatively long time to avoid having to recalculate them
