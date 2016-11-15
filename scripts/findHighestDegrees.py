@@ -3,14 +3,14 @@ import random
 import pickle
 import operator
 from collections import defaultdict
-# userfile = open('data/users.tsv')
+# userfile = open('../data/users.tsv')
 numToSample = 100000
 # users = []
 # for line in userfile:
 #     users.append(int(line))
 # userfile.close()
 
-boardfile = open('data/boards.tsv')
+boardfile = open('../data/boards.tsv')
 board2user  = {}
 user2boards = []
 for line in boardfile:
@@ -21,7 +21,7 @@ boardfile.close()
 print 'Loaded Boards'
 
 follows = {}
-followfile = open('data/follow.tsv')
+followfile = open('../data/follow.tsv')
 indegs = defaultdict(int)
 for line in followfile:
     board_id, follower, created_date = line.split('\t')

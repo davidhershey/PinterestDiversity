@@ -1,6 +1,8 @@
-import snap
+import pandas
+import graphistry
+# graphistry.register(key='YOUR_API_KEY_HERE')
 
 
-graph = snap.LoadEdgeList(snap.PNGraph, 'firstMillionGraph.txt', 0, 1)
-
-snap.DrawGViz(graph, snap.gvlDot, "graph.png", "graph 1")
+links = pandas.read_csv('../graphs/firstMillionGraph.csv')
+plotter = graphistry.bind(source="source", destination="target")
+plotter.plot(links)

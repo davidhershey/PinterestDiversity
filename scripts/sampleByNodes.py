@@ -4,7 +4,7 @@ import pickle
 import operator
 import numpy as np
 from collections import defaultdict
-# userfile = open('data/users.tsv')
+# userfile = open('../data/users.tsv')
 # numToSample = 100000
 # # users = []
 # # for line in userfile:
@@ -32,7 +32,7 @@ from collections import defaultdict
 
 loaded = pickle.load(open('sampled_nodes.p'))
 print len(loaded)
-# boardfile = open('data/boards.tsv')
+# boardfile = open('../data/boards.tsv')
 # board2user  = {}
 # user2boards = []
 # for line in boardfile:
@@ -43,7 +43,7 @@ print len(loaded)
 # print 'Loaded Boards'
 #
 # follows = {}
-# followfile = open('data/follow.tsv')
+# followfile = open('../data/follow.tsv')
 # fullGraph = snap.TNGraph.New(1100000,5000000)
 # count = 0
 # for line in followfile:

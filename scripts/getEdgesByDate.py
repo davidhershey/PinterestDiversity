@@ -26,6 +26,8 @@ for line in followfile:
     board_id, follower, created_date = line.split('\t')
     date = datetime.datetime.strptime(created_date, '%Y-%m-%d\n')
     leader,name = board2user[board_id]
+    if follower == leader:
+        continue #eliminate self loops
     edgesDates.append((follower,leader,date))
 
 print 'Loaded Follows'
@@ -34,11 +36,12 @@ print 'Sorting'
 sorted_by_date = sorted(edgesDates, key=lambda tup: tup[2])
 print 'Writing'
 
-outfile = open('../graphs/firstMillionGraph.txt','w')
-for i in range(1000000):
+outfile = open('../graphs/first50kGraph.txt','w')
+for i in range(50000):
     src,dst,date = sorted_by_date[i]
     outfile.write('{}\t{}\t{}\n'.format(src,dst,date))
 
+pickle.dump(sorted_by_date,open('EdgesByDate.p','w'))
 outfile.close()
 # top_degs = pickle.load(open('top_degs.p'))
 # top_deg = open('top_deg.txt','w')
