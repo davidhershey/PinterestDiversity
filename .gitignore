@@ -1,2 +1,6 @@
 scripts/_snap.so
 *.DS_Store
+data/boards.tsv
+data/follow.tsv
+data/pins.tsv
+data/users.tsv
