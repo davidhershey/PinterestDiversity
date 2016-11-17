@@ -37,11 +37,12 @@ for key in indegs:
 
 outdist = defaultdict(int)
 for key in outdegs:
-    outdist[indegs[key]] +=1
+    outdist[outdegs[key]] +=1
 
-pickle.dump(outdist,open('outDegDist.p','w'))
-pickle.dump(indist ,open('inDegDist.p' ,'w'))
+pickle.dump(outdist,open('../datastructures/outDegDist.p','w'))
+pickle.dump(indist ,open('../datastructures/inDegDist.p' ,'w'))
 
+exit()
 print 'Sorting'
 sorted_by_indeg = sorted(indegs.items(), key=operator.itemgetter(1),reverse=True)
 pickle.dump(sorted_by_indeg,open('top_degs.p','w'))
