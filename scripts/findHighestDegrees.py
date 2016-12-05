@@ -23,13 +23,26 @@ print 'Loaded Boards'
 follows = {}
 followfile = open('../data/follow.tsv')
 indegs = defaultdict(int)
+outdegs = defaultdict(int)
 for line in followfile:
     board_id, follower, created_date = line.split('\t')
     leader,name = board2user[board_id]
     indegs[leader] +=1
+    outdegs[follower] +=1
 
 print 'Loaded Follows'
+indist = defaultdict(int)
+for key in indegs:
+    indist[indegs[key]] +=1
 
+outdist = defaultdict(int)
+for key in outdegs:
+    outdist[outdegs[key]] +=1
+
+pickle.dump(outdist,open('../datastructures/outDegDist.p','w'))
+pickle.dump(indist ,open('../datastructures/inDegDist.p' ,'w'))
+
+exit()
 print 'Sorting'
 sorted_by_indeg = sorted(indegs.items(), key=operator.itemgetter(1),reverse=True)
 pickle.dump(sorted_by_indeg,open('top_degs.p','w'))

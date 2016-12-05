@@ -36,12 +36,13 @@ print 'Sorting'
 sorted_by_date = sorted(edgesDates, key=lambda tup: tup[2])
 print 'Writing'
 
-outfile = open('../graphs/first50kGraph.txt','w')
+
+outfile = open('../graphs/fullEdgesByDate.txt','w')
 for i in range(len(sorted_by_date)):
     src,dst,date = sorted_by_date[i]
     outfile.write('{}\t{}\t{}\n'.format(src,dst,date))
 
-pickle.dump(sorted_by_date,open('EdgesByDate.p','w'))
+# pickle.dump(sorted_by_date,open('EdgesByDate.p','w'))
 outfile.close()
 # top_degs = pickle.load(open('top_degs.p'))
 # top_deg = open('top_deg.txt','w')

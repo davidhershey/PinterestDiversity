@@ -1,4 +1,9 @@
 scripts/_snap.so
-data/*
 graphs/boardsByPins.txt
 graphs/usersByPins.txt
+*.DS_Store
+data/boards.tsv
+data/follow.tsv
+data/pins.tsv
+data/users.tsv
+
