@@ -1,1 +1,4 @@
 scripts/_snap.so
+data/*
+graphs/boardsByPins.txt
+graphs/usersByPins.txt

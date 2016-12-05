@@ -37,7 +37,7 @@ sorted_by_date = sorted(edgesDates, key=lambda tup: tup[2])
 print 'Writing'
 
 outfile = open('../graphs/first50kGraph.txt','w')
-for i in range(50000):
+for i in range(len(sorted_by_date)):
     src,dst,date = sorted_by_date[i]
     outfile.write('{}\t{}\t{}\n'.format(src,dst,date))
 
